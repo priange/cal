@@ -1,86 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Simple calculator"
-        android:layout_gravity="center"
+        android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_marginTop="50dp"
-        android:textSize="30sp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_conversion_absoluteHeight="40dp"
+        tools:layout_conversion_absoluteWidth="235dp" />
 
     <EditText
         android:id="@+id/number1"
+        android:layout_width="212dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
         android:hint="Enter number"
-        android:layout_marginTop="30dp"
         android:inputType="number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:layout_conversion_absoluteHeight="45dp"
+        tools:layout_conversion_absoluteWidth="371dp" />
 
 
     <EditText
         android:id="@+id/number2"
+        android:layout_width="246dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
         android:hint="Enter number"
-        android:layout_marginTop="30dp"
         android:inputType="number"
-        android:layout_width="match_parent"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number1"
+        tools:ignore="DuplicateIds"
+        tools:layout_conversion_absoluteHeight="45dp"
+        tools:layout_conversion_absoluteWidth="371dp" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:ignore="DuplicateIds" />
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:text="+"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_subtract"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number2"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="88dp" />
 
+    <Button
+        android:id="@+id/btn_subtract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:text="-"
+        android:textSize="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_multiply"
+        app:layout_constraintStart_toEndOf="@+id/btn_add"
+        app:layout_constraintTop_toBottomOf="@+id/number2"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="88dp" />
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/btn_add"
-            android:text="+"
-            android:textSize="10dp"
-            android:layout_marginEnd="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_multiply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="*"
+        android:textSize="10dp"
+        app:layout_constraintStart_toEndOf="@+id/btn_subtract"
+        app:layout_constraintTop_toBottomOf="@+id/number2"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="88dp" />
 
-        <Button
-            android:id="@+id/btn_subtract"
-            android:text="-"
-            android:textSize="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_divide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:text="/"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_multiply"
+        app:layout_constraintTop_toBottomOf="@+id/number2"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="87dp" />
 
-        <Button
-            android:id="@+id/btn_multiply"
-            android:text="*"
-            android:textSize="10dp"
-            android:layout_marginEnd="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            android:id="@+id/btn_divide"
-            android:text="/"
-            android:textSize="10dp"
-            android:layout_marginEnd="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-
-    </LinearLayout>
 
     <TextView
-        android:id="@+id/anser"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+        android:id="@+id/tvresult"
+        android:layout_width="215dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="result"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_multiply"
+        tools:layout_conversion_absoluteHeight="19dp"
+        tools:layout_conversion_absoluteWidth="371dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
